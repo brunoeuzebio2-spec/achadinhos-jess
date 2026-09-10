@@ -29,6 +29,26 @@ Abra o arquivo **products.js**. Cada produto é um bloco assim:
 
 Depois de editar, salve o arquivo e suba de novo no Netlify (pode arrastar a pasta de novo em app.netlify.com/drop, ou conectar com o GitHub pra atualizar automaticamente — te explico se quiser).
 
+## Como trocar o produto em destaque
+
+No `products.js`, tire a linha `destaque: true` do produto que está lá agora e coloque no produto que você quer destacar. Só pode ter em **1 produto por vez**.
+
+## Como organizar por categorias
+
+Cada produto tem um campo `categoria` no `products.js`, por exemplo:
+
+```js
+{
+  nome: "Body Collant Feminino...",
+  categoria: "Roupas",
+  ...
+},
+```
+
+O site cria os botões de filtro automaticamente com base nas categorias que existirem — não precisa configurar nada além de preencher esse campo. Pra criar uma categoria nova (tipo "Eletrônicos" ou "Casa e Decoração"), é só escrever esse nome no campo `categoria` dos produtos novos; o botão aparece sozinho.
+
+Dica: use sempre a mesma grafia (maiúsculas/minúsculas e acentos) pra produtos da mesma categoria não virarem categorias separadas sem querer.
+
 ## Como adicionar as fotos (sem editar nenhum código!)
 
 O site já vem preparado pra reconhecer as fotos sozinho. Você só precisa:

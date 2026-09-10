@@ -48,6 +48,21 @@ function ativarFallbackDeFotos(container) {
   });
 }
 
+function renderFiltros(lista, categoriaAtiva, aoClicar) {
+  const nav = document.getElementById('filtros');
+  const categorias = ['Todos', ...new Set(lista.map(p => p.categoria || 'Outros'))];
+
+  nav.innerHTML = categorias.map(cat => `
+    <button class="filtro-pill${cat === categoriaAtiva ? ' filtro-pill--ativo' : ''}" data-categoria="${escapeHTML(cat)}">
+      ${escapeHTML(cat)}
+    </button>
+  `).join('');
+
+  nav.querySelectorAll('.filtro-pill').forEach(btn => {
+    btn.addEventListener('click', () => aoClicar(btn.dataset.categoria));
+  });
+}
+
 function renderHero(produto) {
   const hero = document.getElementById('destaque');
   if (!produto) { hero.style.display = 'none'; return; }
@@ -99,6 +114,18 @@ function renderUpdated() {
   const resto = lista.filter(p => p !== destaque);
 
   renderHero(destaque);
-  renderGrid(resto);
   renderUpdated();
+
+  let categoriaAtiva = 'Todos';
+
+  function aplicarFiltro(categoria) {
+    categoriaAtiva = categoria;
+    const filtrados = categoria === 'Todos'
+      ? resto
+      : resto.filter(p => (p.categoria || 'Outros') === categoria);
+    renderGrid(filtrados);
+    renderFiltros(lista, categoriaAtiva, aplicarFiltro);
+  }
+
+  aplicarFiltro('Todos');
 })();

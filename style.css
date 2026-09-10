@@ -150,6 +150,47 @@ body {
   margin-top: 6px;
 }
 
+/* ---------- Filtros de categoria ---------- */
+
+.filtros {
+  max-width: 1080px;
+  margin: 0 auto 28px;
+  padding: 0 24px;
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.filtros::-webkit-scrollbar {
+  display: none;
+}
+
+.filtro-pill {
+  flex: 0 0 auto;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--cream-dim);
+  background: transparent;
+  border: 1px solid rgba(247,239,230,0.18);
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.filtro-pill:hover {
+  border-color: var(--gold);
+  color: var(--cream);
+}
+
+.filtro-pill--ativo {
+  background: var(--berry);
+  border-color: var(--berry);
+  color: var(--cream);
+}
+
 /* ---------- Feed / grid ---------- */
 
 .feed {
