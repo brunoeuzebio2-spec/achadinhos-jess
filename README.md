@@ -1,9 +1,9 @@
-# Achadinhos — Jess Nocturna
+# Achadinhos — Nocturna Store
 
 ## Como colocar no ar (Netlify)
 
 1. Acesse https://app.netlify.com/drop
-2. Descompacte o arquivo `achadinhos-jess-nocturna.zip`
+2. Descompacte o arquivo `achadinhos-nocturna-store.zip`
 3. Arraste a pasta descompactada pra dentro da página do Netlify
 4. Pronto — em segundos você recebe um link tipo `nome-aleatorio.netlify.app`
 
