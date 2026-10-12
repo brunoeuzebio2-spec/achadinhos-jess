@@ -247,4 +247,76 @@ const PRODUTOS = [
     emoji: "🥾",
     categoria: "Calçados"
   },
+
+  // ---- novos (números 31 a 40) ----
+  {
+    nome: "Vestido Ciganinha Manga Longa Tomara Que Caia Colado Tubinho Gringo — Inverno",
+    preco: "R$28,39 - R$28,90",
+    link: "https://s.shopee.com.br/3g4PJZI37R",
+    emoji: "👗",
+    categoria: "Roupas"
+  },
+  {
+    nome: "Macaquinho Vestido Feminino Frente Única Solto Costas Abertas",
+    preco: "R$33,90 - R$37,80",
+    link: "https://s.shopee.com.br/6AlkIAYnCU",
+    emoji: "👗",
+    categoria: "Roupas"
+  },
+  {
+    nome: "Vestido Lorena Curto Colado Tubinho — Moda Feminina, Festa, Balada, Elegante",
+    preco: "R$33,90",
+    link: "https://s.shopee.com.br/3g4PJaLuKS",
+    emoji: "👗",
+    categoria: "Roupas"
+  },
+  {
+    nome: "Vestido Feminino Longo Suplex Decote V Sofisticado — Para Eventos",
+    preco: "R$44,00",
+    link: "https://s.shopee.com.br/30oiWNSVgJ",
+    emoji: "👗",
+    categoria: "Roupas"
+  },
+  {
+    nome: "Vestido Longo Canelado Fenda Na Perna e Trançado Nas Costas — Luxo, Detalhes No Bumbum",
+    preco: "R$23,28 - R$29,10",
+    link: "https://s.shopee.com.br/4VdWJ9ZfBa",
+    emoji: "👗",
+    categoria: "Roupas"
+  },
+  {
+    nome: "Óculos de Sol Olho de Gato Meia Armação Pequeno Para Mulheres — Vintage, Verão, Praia",
+    preco: "R$20,62 - R$22,93",
+    link: "https://s.shopee.com.br/5VW3V7kICT",
+    emoji: "🕶️",
+    categoria: "Acessórios"
+  },
+  {
+    nome: "Calça Pantalona Feminina Tecido Texturado Cintura Alta — Elegante",
+    preco: "R$40,19 - R$46,19",
+    link: "https://s.shopee.com.br/20wBKhNoF5",
+    emoji: "👖",
+    categoria: "Roupas"
+  },
+  {
+    nome: "Sutiã de Ioga Sexy Decote em V — Esportivo Sem Costura, Costas Bonitas, Almofadas Removíveis",
+    preco: "R$14,67 - R$38,82",
+    link: "https://s.shopee.com.br/3LRYvAE4Df",
+    emoji: "🎽",
+    categoria: "Roupas"
+  },
+  {
+    nome: "Kit 2 Shorts Alfaiataria Feminino Cintura Alta Com Pregas — Elegantes",
+    preco: "R$47,99",
+    link: "https://s.shopee.com.br/4B0fuhWtRW",
+    emoji: "🩳",
+    categoria: "Roupas"
+  },
+  {
+    nome: "Conjunto Feminino Alfaiataria Top Cropped e Short — Sólido",
+    preco: "R$78,39 - R$79,99",
+    link: "https://s.shopee.com.br/3LRYvBrGDp",
+    emoji: "👚",
+    categoria: "Roupas"
+  },
 ];
