@@ -25,13 +25,13 @@ Abra o arquivo **products.js**. Cada produto é um bloco assim:
 - **Adicionar**: copie um bloco inteiro, cole antes do `];` no final do arquivo, e mude os dados.
 - **Editar**: só muda o texto dentro das aspas.
 - **Remover**: apague o bloco inteiro (do `{` até o `},`).
-- **Destaque**: coloque `destaque: true` em UM produto pra ele aparecer no topo da página. Se nenhum tiver isso, o primeiro da lista vira o destaque automaticamente.
+- **Destaque**: coloque `destaque: true` nos produtos que você quer nos slides do topo da página (até 5). Se nenhum tiver isso, o primeiro da lista vira o destaque automaticamente.
 
 Depois de editar, salve o arquivo e suba de novo no Netlify (pode arrastar a pasta de novo em app.netlify.com/drop, ou conectar com o GitHub pra atualizar automaticamente — te explico se quiser).
 
-## Como trocar o produto em destaque
+## Como trocar os produtos em destaque (slides)
 
-No `products.js`, tire a linha `destaque: true` do produto que está lá agora e coloque no produto que você quer destacar. Só pode ter em **1 produto por vez**.
+Os slides do topo mostram todos os produtos que têm `destaque: true` no `products.js` (no máximo 5, na ordem em que aparecem no arquivo). Pra trocar, tire a linha `destaque: true` do produto antigo e coloque no novo. Eles passam sozinhos a cada 5 segundos, e dá pra navegar pelas setinhas, pelas bolinhas ou arrastando no celular. Produtos em destaque não aparecem repetidos na lista de baixo.
 
 ## Como organizar por categorias
 

@@ -16,9 +16,11 @@
 //   categoria -> nome da categoria pra aparecer nos filtros, ex: "Roupas",
 //                "Beleza", "Casa", "Eletrônicos" — escreva do jeito que
 //                quer que apareça na tela. Se não preencher, cai em "Outros".
-//   destaque  -> true no produto que você quer em destaque no topo (use em
-//                SÓ 1 produto por vez — pra trocar o destaque, tire o
-//                "destaque: true" do produto antigo e coloque no novo)
+//   destaque  -> true nos produtos que você quer nos slides do topo da
+//                página (o ideal é de 3 a 5). Eles passam sozinhos, com
+//                setinhas e bolinhas. Pra tirar um produto dos slides,
+//                apague a linha "destaque: true" dele. Produtos em
+//                destaque não aparecem repetidos na lista de baixo.
 //
 // Como adicionar uma foto:
 //   1. Salve o arquivo da imagem dentro da pasta "imagens/"
@@ -38,14 +40,16 @@ const PRODUTOS = [
     preco: "R$68,02",
     link: "https://s.shopee.com.br/6VNkOvtipl",
     emoji: "🌙",
-    categoria: "Roupas"
+    categoria: "Roupas",
+    destaque: true
   },
   {
     nome: "Conjunto Feminino Saia Longa e Cropped Alcinha Com Fenda — Várias Cores, Moda Blogueira",
     preco: "R$39,90 - R$67,58",
     link: "https://s.shopee.com.br/2BElExNxb3",
     emoji: "👗",
-    categoria: "Roupas"
+    categoria: "Roupas",
+    destaque: true
   },
   {
     nome: "Vestido Feminino Lovito Férias Nacional Sem Costas — Primavera/Verão",
@@ -59,7 +63,8 @@ const PRODUTOS = [
     preco: "R$59,90 - R$79,90",
     link: "https://s.shopee.com.br/8fSEyim7zO",
     emoji: "👖",
-    categoria: "Roupas"
+    categoria: "Roupas",
+    destaque: true
   },
   {
     nome: "Calça Pantalona Alfaiataria Premium Com Bolso — Promoção",
@@ -211,7 +216,8 @@ const PRODUTOS = [
     preco: "R$79,90 - R$79,99",
     link: "https://s.shopee.com.br/AAHsXFZunq",
     emoji: "🩱",
-    categoria: "Roupas"
+    categoria: "Roupas",
+    destaque: true
   },
   {
     nome: "Short Jeans Feminino Lycra Bordado Cintura Alta — Luxo, Conforto, Tendência",

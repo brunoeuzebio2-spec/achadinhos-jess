@@ -157,6 +157,85 @@ body {
   margin-top: 6px;
 }
 
+/* ---------- Slider do hero ---------- */
+
+.hero-slider {
+  position: relative;
+}
+
+.hero-viewport {
+  overflow: hidden;
+  border-radius: 22px;
+}
+
+.hero-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.hero-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.hero-slider .hero-card {
+  height: 100%;
+}
+
+.hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.92);
+  color: var(--rose-deep);
+  font-size: 26px;
+  line-height: 1;
+  padding: 0 0 3px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(209,59,118,0.25);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.hero-arrow:hover {
+  background: var(--rose-deep);
+  color: #fff;
+}
+
+.hero-arrow--prev { left: -12px; }
+.hero-arrow--next { right: -12px; }
+
+@media (min-width: 1000px) {
+  .hero-arrow--prev { left: -20px; }
+  .hero-arrow--next { right: -20px; }
+}
+
+.hero-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.hero-dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: rgba(232,98,143,0.30);
+  cursor: pointer;
+  transition: width 0.2s ease, background 0.2s ease;
+}
+
+.hero-dot--ativo {
+  width: 26px;
+  background: var(--rose-deep);
+}
+
 /* ---------- Filtros de categoria ---------- */
 
 .filtros {

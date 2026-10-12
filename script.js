@@ -63,24 +63,100 @@ function renderFiltros(lista, categoriaAtiva, aoClicar) {
   });
 }
 
-function renderHero(produto) {
+function slideHTML(produto) {
+  return `
+    <div class="hero-slide">
+      <div class="hero-card">
+        <div class="hero-card__swatch">${renderSwatch(produto)}</div>
+        <div class="hero-card__body">
+          <p class="hero-card__label">achadinho em destaque</p>
+          <h3 class="hero-card__name">${escapeHTML(produto.nome)}</h3>
+          <p class="hero-card__price">${escapeHTML(produto.preco)}</p>
+          <a class="btn hero-card__cta" href="${produto.link}" target="_blank" rel="noopener sponsored">
+            Ver na Shopee
+          </a>
+        </div>
+      </div>
+    </div>`;
+}
+
+function renderHero(destaques) {
   const hero = document.getElementById('destaque');
-  if (!produto) { hero.style.display = 'none'; return; }
+  if (!destaques.length) { hero.style.display = 'none'; return; }
+
+  const total = destaques.length;
+  const varios = total > 1;
 
   hero.innerHTML = `
-    <div class="hero-card">
-      <div class="hero-card__swatch">${renderSwatch(produto)}</div>
-      <div class="hero-card__body">
-        <p class="hero-card__label">achadinho da semana</p>
-        <h3 class="hero-card__name">${escapeHTML(produto.nome)}</h3>
-        <p class="hero-card__price">${escapeHTML(produto.preco)}</p>
-        <a class="btn hero-card__cta" href="${produto.link}" target="_blank" rel="noopener sponsored">
-          Ver na Shopee
-        </a>
+    <div class="hero-slider" role="region" aria-roledescription="carrossel" aria-label="Achadinhos em destaque">
+      <div class="hero-viewport">
+        <div class="hero-track">${destaques.map(slideHTML).join('')}</div>
       </div>
+      ${varios ? `
+        <button class="hero-arrow hero-arrow--prev" aria-label="Slide anterior">‹</button>
+        <button class="hero-arrow hero-arrow--next" aria-label="Próximo slide">›</button>
+        <div class="hero-dots">
+          ${destaques.map((_, i) => `<button class="hero-dot" aria-label="Ir para o slide ${i + 1}"></button>`).join('')}
+        </div>` : ''}
     </div>
   `;
   ativarFallbackDeFotos(hero);
+
+  const track = hero.querySelector('.hero-track');
+  const slides = hero.querySelectorAll('.hero-slide');
+  const dots = hero.querySelectorAll('.hero-dot');
+  let atual = 0;
+  let timer = null;
+
+  function ir(i) {
+    atual = (i + total) % total;
+    track.style.transform = `translateX(-${atual * 100}%)`;
+    slides.forEach((sl, n) => {
+      const ativo = n === atual;
+      sl.setAttribute('aria-hidden', ativo ? 'false' : 'true');
+      sl.querySelectorAll('a').forEach(a => a.tabIndex = ativo ? 0 : -1);
+    });
+    dots.forEach((d, n) => {
+      d.classList.toggle('hero-dot--ativo', n === atual);
+      d.setAttribute('aria-current', n === atual ? 'true' : 'false');
+    });
+  }
+
+  ir(0);
+  if (!varios) return;
+
+  const reduzir = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const parar = () => { clearInterval(timer); timer = null; };
+  const iniciar = () => {
+    if (reduzir) return;
+    parar();
+    timer = setInterval(() => ir(atual + 1), 5000);
+  };
+
+  hero.querySelector('.hero-arrow--prev').addEventListener('click', () => { ir(atual - 1); iniciar(); });
+  hero.querySelector('.hero-arrow--next').addEventListener('click', () => { ir(atual + 1); iniciar(); });
+  dots.forEach((d, n) => d.addEventListener('click', () => { ir(n); iniciar(); }));
+
+  // pausa quando o mouse ou o foco estão no slider
+  const slider = hero.querySelector('.hero-slider');
+  slider.addEventListener('mouseenter', parar);
+  slider.addEventListener('mouseleave', iniciar);
+  slider.addEventListener('focusin', parar);
+  slider.addEventListener('focusout', iniciar);
+
+  // arrastar com o dedo no celular
+  let x0 = null;
+  slider.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; parar(); }, { passive: true });
+  slider.addEventListener('touchend', e => {
+    if (x0 !== null) {
+      const dx = e.changedTouches[0].clientX - x0;
+      if (Math.abs(dx) > 40) ir(atual + (dx < 0 ? 1 : -1));
+    }
+    x0 = null;
+    iniciar();
+  });
+
+  iniciar();
 }
 
 function renderGrid(produtos) {
@@ -110,10 +186,13 @@ function renderUpdated() {
   const lista = (typeof PRODUTOS !== 'undefined') ? PRODUTOS : [];
   lista.forEach((p, i) => { p._num = i + 1; }); // numera na ordem do products.js
 
-  const destaque = lista.find(p => p.destaque) || lista[0];
-  const resto = lista.filter(p => p !== destaque);
+  // todos os produtos com destaque: true viram slides (máx. 5).
+  // se nenhum tiver, o primeiro da lista vira o destaque.
+  let destaques = lista.filter(p => p.destaque).slice(0, 5);
+  if (!destaques.length && lista.length) destaques = [lista[0]];
+  const resto = lista.filter(p => !destaques.includes(p));
 
-  renderHero(destaque);
+  renderHero(destaques);
   renderUpdated();
 
   let categoriaAtiva = 'Todos';
@@ -124,7 +203,7 @@ function renderUpdated() {
       ? resto
       : resto.filter(p => (p.categoria || 'Outros') === categoria);
     renderGrid(filtrados);
-    renderFiltros(lista, categoriaAtiva, aplicarFiltro);
+    renderFiltros(resto, categoriaAtiva, aplicarFiltro);
   }
 
   aplicarFiltro('Todos');
