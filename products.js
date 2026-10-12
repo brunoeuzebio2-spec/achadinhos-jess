@@ -31,8 +31,7 @@ const PRODUTOS = [
     preco: "R$27,00",
     link: "https://s.shopee.com.br/112nqaCC9y",
     emoji: "👚",
-    categoria: "Roupas",
-    destaque: true
+    categoria: "Roupas"
   },
   {
     nome: "Conjunto Feminino Top e Saia Com Tule Suplex Fluit Premium — Moda Gringa Luxo Balada",
@@ -168,5 +167,78 @@ const PRODUTOS = [
     link: "https://s.shopee.com.br/9KhwmuCsc1",
     emoji: "👚",
     categoria: "Roupas"
+  },
+
+  // ---- novos (números 21 a 30) ----
+  {
+    nome: "Vestido Mula Manca Tubinho Curto Regata Um Ombro Feminino",
+    preco: "R$37,19",
+    link: "https://s.shopee.com.br/1LgU0n90KG",
+    emoji: "👗",
+    categoria: "Roupas",
+    destaque: true
+  },
+  {
+    nome: "Casaco Blazer Feminino Longo Sobretudo — P, M, G, GG",
+    preco: "R$27,00 - R$33,30",
+    link: "https://s.shopee.com.br/5fpTAoUku9",
+    emoji: "🧥",
+    categoria: "Roupas"
+  },
+  {
+    nome: "Kit 2 Anágua Shortinho Íntimo Segunda Pele — Conforto, Lingerie Modeladora, Short Para Saia e Vestido",
+    preco: "R$26,90",
+    link: "https://s.shopee.com.br/1LgU0rTFXE",
+    emoji: "🩲",
+    categoria: "Roupas"
+  },
+  {
+    nome: "Pijama Curto Em Malha Blogueirinha Short e Blusa — Amamentação, Promoção",
+    preco: "R$29,99 - R$34,98",
+    link: "https://s.shopee.com.br/1B6QQXzTz",
+    emoji: "🌙",
+    categoria: "Roupas"
+  },
+  {
+    nome: "Cropped Gola Alta Canelado Sem Manga",
+    preco: "R$30,00",
+    link: "https://s.shopee.com.br/3Vkyas6vRa",
+    emoji: "👚",
+    categoria: "Roupas"
+  },
+  {
+    nome: "Conjunto Fitness Calça Legging e Top Com Bojo Bicolor — Academia, Costura Reforçada, Cós Alto",
+    preco: "R$79,90 - R$79,99",
+    link: "https://s.shopee.com.br/AAHsXFZunq",
+    emoji: "🩱",
+    categoria: "Roupas"
+  },
+  {
+    nome: "Short Jeans Feminino Lycra Bordado Cintura Alta — Luxo, Conforto, Tendência",
+    preco: "R$49,50 - R$58,00",
+    link: "https://s.shopee.com.br/6q1QZ8zXR4",
+    emoji: "🩳",
+    categoria: "Roupas"
+  },
+  {
+    nome: "Calça Legging Levanta Bumbum Feminina Cós Alto — Academia, Fitness, Modeladora, Praia",
+    preco: "R$42,38 - R$42,39",
+    link: "https://s.shopee.com.br/905v98HcQA",
+    emoji: "🩱",
+    categoria: "Roupas"
+  },
+  {
+    nome: "Conjunto de Academia Feminino Short Com Bolso Zero Transparência Cintura Alta + Top Com Forro Duplo",
+    preco: "R$44,90 - R$49,90",
+    link: "https://s.shopee.com.br/1B6QbyCv9",
+    emoji: "🎽",
+    categoria: "Roupas"
+  },
+  {
+    nome: "Bota Feminina Coturno Tratorado Blogueira Confortável — Preço de Fábrica",
+    preco: "R$59,90",
+    link: "https://s.shopee.com.br/80DNxUgyZd",
+    emoji: "🥾",
+    categoria: "Calçados"
   },
 ];
