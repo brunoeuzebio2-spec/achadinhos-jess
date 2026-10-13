@@ -40,16 +40,14 @@ const PRODUTOS = [
     preco: "R$68,02",
     link: "https://s.shopee.com.br/6VNkOvtipl",
     emoji: "🌙",
-    categoria: "Roupas",
-    destaque: true
+    categoria: "Roupas"
   },
   {
     nome: "Conjunto Feminino Saia Longa e Cropped Alcinha Com Fenda — Várias Cores, Moda Blogueira",
     preco: "R$39,90 - R$67,58",
     link: "https://s.shopee.com.br/2BElExNxb3",
     emoji: "👗",
-    categoria: "Roupas",
-    destaque: true
+    categoria: "Roupas"
   },
   {
     nome: "Vestido Feminino Lovito Férias Nacional Sem Costas — Primavera/Verão",
@@ -63,8 +61,7 @@ const PRODUTOS = [
     preco: "R$59,90 - R$79,90",
     link: "https://s.shopee.com.br/8fSEyim7zO",
     emoji: "👖",
-    categoria: "Roupas",
-    destaque: true
+    categoria: "Roupas"
   },
   {
     nome: "Calça Pantalona Alfaiataria Premium Com Bolso — Promoção",
@@ -180,8 +177,7 @@ const PRODUTOS = [
     preco: "R$37,19",
     link: "https://s.shopee.com.br/1LgU0n90KG",
     emoji: "👗",
-    categoria: "Roupas",
-    destaque: true
+    categoria: "Roupas"
   },
   {
     nome: "Casaco Blazer Feminino Longo Sobretudo — P, M, G, GG",
@@ -216,8 +212,7 @@ const PRODUTOS = [
     preco: "R$79,90 - R$79,99",
     link: "https://s.shopee.com.br/AAHsXFZunq",
     emoji: "🩱",
-    categoria: "Roupas",
-    destaque: true
+    categoria: "Roupas"
   },
   {
     nome: "Short Jeans Feminino Lycra Bordado Cintura Alta — Luxo, Conforto, Tendência",
@@ -254,35 +249,40 @@ const PRODUTOS = [
     preco: "R$28,39 - R$28,90",
     link: "https://s.shopee.com.br/3g4PJZI37R",
     emoji: "👗",
-    categoria: "Roupas"
+    categoria: "Roupas",
+    destaque: true
   },
   {
     nome: "Macaquinho Vestido Feminino Frente Única Solto Costas Abertas",
     preco: "R$33,90 - R$37,80",
     link: "https://s.shopee.com.br/6AlkIAYnCU",
     emoji: "👗",
-    categoria: "Roupas"
+    categoria: "Roupas",
+    destaque: true
   },
   {
     nome: "Vestido Lorena Curto Colado Tubinho — Moda Feminina, Festa, Balada, Elegante",
     preco: "R$33,90",
     link: "https://s.shopee.com.br/3g4PJaLuKS",
     emoji: "👗",
-    categoria: "Roupas"
+    categoria: "Roupas",
+    destaque: true
   },
   {
     nome: "Vestido Feminino Longo Suplex Decote V Sofisticado — Para Eventos",
     preco: "R$44,00",
     link: "https://s.shopee.com.br/30oiWNSVgJ",
     emoji: "👗",
-    categoria: "Roupas"
+    categoria: "Roupas",
+    destaque: true
   },
   {
     nome: "Vestido Longo Canelado Fenda Na Perna e Trançado Nas Costas — Luxo, Detalhes No Bumbum",
     preco: "R$23,28 - R$29,10",
     link: "https://s.shopee.com.br/4VdWJ9ZfBa",
     emoji: "👗",
-    categoria: "Roupas"
+    categoria: "Roupas",
+    destaque: true
   },
   {
     nome: "Óculos de Sol Olho de Gato Meia Armação Pequeno Para Mulheres — Vintage, Verão, Praia",
